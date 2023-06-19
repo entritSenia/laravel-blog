@@ -17,7 +17,30 @@
                         </div>
                         <aside class="col-lg-3">
                             <div class="sidebar">
-                                <div class="widget widget-search">
+
+                                <div class="widget">
+                                    <h3 class="widget-title">Users</h3><!-- End .widget-title -->
+
+                                    <ul class="posts-list">
+
+                                        @foreach ($users as $user)
+                                            <li>
+                                                {{-- <figure>
+                                                    <a href="/post/{{ $post->id }}">
+                                                        <img src="/storage/image/{{ $post->image }}" alt="post">
+                                                    </a>
+                                                </figure> --}}
+
+                                                <div>
+                                                    {{-- <span>{{ $post->created_at->format('j/n/Y') }}</span> --}}
+                                                    <h4><a href="/profile/{{ $user->username }}">{{ $user->username }}</a>
+                                                    </h4>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul><!-- End .posts-list -->
+                                </div><!-- End .widget -->
+                                {{-- <div class="widget widget-search">
                                     <h3 class="widget-title">Search</h3><!-- End .widget-title -->
 
                                     <form action="#">
@@ -27,7 +50,7 @@
                                         <button type="submit" class="btn "><a class="icon-search header-search-icon"></a><span
                                                 class="sr-only">Search</span></button>
                                     </form>
-                                </div><!-- End .widget -->
+                                </div><!-- End .widget --> --}}
 
                                 {{-- <div class="widget widget-cats">
                                     <h3 class="widget-title">Following</h3><!-- End .widget-title -->
@@ -45,18 +68,18 @@
                                     <ul class="posts-list">
 
                                         @foreach ($posts as $post)
-                                        <li>
-                                            <figure>
-                                                <a href="/post/{{ $post->id }}">
-                                                    <img src="/storage/image/{{ $post->image }}" alt="post">
-                                                </a>
-                                            </figure>
+                                            <li>
+                                                <figure>
+                                                    <a href="/post/{{ $post->id }}">
+                                                        <img src="/storage/image/{{ $post->image }}" alt="post">
+                                                    </a>
+                                                </figure>
 
-                                            <div>
-                                                <span>{{$post->created_at->format('j/n/Y')}}</span>
-                                                <h4><a href="/post/{{ $post->id }}">{!! $post->body !!}</a></h4>
-                                            </div>
-                                        </li>
+                                                <div>
+                                                    <span>{{ $post->created_at->format('j/n/Y') }}</span>
+                                                    <h4><a href="/post/{{ $post->id }}">{!! $post->body !!}</a></h4>
+                                                </div>
+                                            </li>
                                         @endforeach
                                     </ul><!-- End .posts-list -->
                                 </div><!-- End .widget -->
@@ -76,7 +99,7 @@
 
                                     <div class="tagcloud">
                                         @foreach ($posts as $post)
-                                            <a href="#">{{ $post->title }}</a>
+                                            <a href="/post/{{ $post->id }}">{{ $post->title }}</a>
                                         @endforeach
                                     </div><!-- End .tagcloud -->
                                 </div><!-- End .widget -->

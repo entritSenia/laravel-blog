@@ -1,7 +1,7 @@
 <x-layout :doctitle="$doctitle">
-    <div class="container py-md-5 container--narrow">
+    <div class="container py-md-5 container--narrow" id="profile-page">
         <div class="col-12 row">
-            <div class="col-4">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
                 <h2>
                     <img class="avatar-normal" src="{{ $sharedData['avatar'] }}" />
                     {{ $sharedData['username'] }}
@@ -33,7 +33,7 @@
                 </h2>
             </div>
 
-            <div class="col-6 row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 row">
                 <div class="menu-wrap info col-4">
                     <ul class="menu justify-content-end">
                         <li class="menu-item-custom">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="menu-wrap info col-4">
-                    <ul class="menu">
+                    <ul class="menu justify-content-center">
                         <li class="menu-item-custom">
                             <a href="#">{{ $sharedData['followersCount'] }}</a>
                             <div class="dd-a"><span>Followers</span></div>

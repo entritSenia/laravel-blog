@@ -15,61 +15,61 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'id' => 100,
-            'username' => 'brad',
-            'email' => 'brad@local',
-            'password' => Hash::make('qwertyqwerty'),
+            'id' => 1,
+            'username' => 'tester',
+            'email' => 'tester@tester',
+            'password' => Hash::make('tester123'),
             'isAdmin' => 1
         ]);
 
         DB::table('users')->insert([
-            'id' => 200,
-            'username' => 'barksalot',
-            'email' => 'barksalot@local',
-            'password' => Hash::make('qwertyqwerty')
+            'id' => 2,
+            'username' => 'jake',
+            'email' => 'jake@jake',
+            'password' => Hash::make('jake123')
         ]);
 
         DB::table('users')->insert([
-            'id' => 300,
-            'username' => 'meowsalot',
-            'email' => 'meowsalot@local',
-            'password' => Hash::make('qwertyqwerty')
+            'id' => 3,
+            'username' => 'peter',
+            'email' => 'peter@peter',
+            'password' => Hash::make('peter123')
         ]);
 
-        DB::table('posts')->insert([
-            'user_id' => 100,
-            'title' => 'My First Post',
-            'body' => 'Lorem ipsum this is my post.',
-            'created_at' => date("Y-m-d H:i:s")
-        ]);
+        // DB::table('posts')->insert([
+        //     'user_id' => 1,
+        //     'title' => 'Tester`s Post',
+        //     'body' => 'My first post as Tester!',
+        //     'created_at' => date("Y-m-d H:i:s")
+        // ]);
 
-        DB::table('posts')->insert([
-            'user_id' => 100,
-            'title' => 'My Second Post: HTML',
-            'body' => 'HTML stands for Hyper Text Markup Language',
-            'created_at' => date("Y-m-d H:i:s")
-        ]);
+        // DB::table('posts')->insert([
+        //     'user_id' => 1,
+        //     'title' => 'Tester`s Post 2',
+        //     'body' => 'My second post as Tester!',
+        //     'created_at' => date("Y-m-d H:i:s")
+        // ]);
 
-        DB::table('posts')->insert([
-            'user_id' => 200,
-            'title' => 'Being a Dog Is Fun',
-            'body' => 'I like to run and bark.',
-            'created_at' => date("Y-m-d H:i:s")
+        // DB::table('posts')->insert([
+        //     'user_id' => 2,
+        //     'title' => 'Jake`s Post',
+        //     'body' => 'My first post as Jake!',
+        //     'created_at' => date("Y-m-d H:i:s")
+        // ]);
+
+        DB::table('follows')->insert([
+            'user_id' => 2,
+            'followeduser' => 1
         ]);
 
         DB::table('follows')->insert([
-            'user_id' => 200,
-            'followeduser' => 100
+            'user_id' => 3,
+            'followeduser' => 1
         ]);
 
         DB::table('follows')->insert([
-            'user_id' => 300,
-            'followeduser' => 100
-        ]);
-
-        DB::table('follows')->insert([
-            'user_id' => 300,
-            'followeduser' => 200
+            'user_id' => 3,
+            'followeduser' => 2
         ]);
     }
 }

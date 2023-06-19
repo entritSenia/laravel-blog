@@ -70,11 +70,12 @@
                         </div><!-- .End .tab-pane -->
                         <div class="tab-pane fade show active" id="register-2" role="tabpanel"
                             aria-labelledby="register-tab-2">
-                            <form action="/register" method="POST" id="registration-form">
+                            <form action="/register" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label for="username-register">Your username *</label>
-                                    <input value="{{ old('username') }}" class="form-control"
-                                         name="username" id="username-register" type="text" autocomplete="off" />
+                                    <input class="form-control" name="username"
+                                        id="username-register" type="text" autocomplete="off" />
                                     @error('username')
                                         <p class="m-0 alert alert-danger shadow-sm">{{ $message }}</p>
                                     @enderror
@@ -82,7 +83,7 @@
 
                                 <div class="form-group">
                                     <label for="email-register">Your email address *</label>
-                                    <input type="text" value="{{ old('email') }}" name="email"
+                                    <input type="text" name="email"
                                         class="form-control" id="email-register" autocomplete="off" />
                                     @error('email')
                                         <p class="m-0 alert alert-danger shadow-sm">{{ $message }}</p>
@@ -100,8 +101,8 @@
 
                                 <div class="form-group">
                                     <label for="password-register-confirm">Confirm Password *</label>
-                                    <input name="password_confirmation" id="password-register-confirm"
-                                        type="password" class="form-control">
+                                    <input name="password_confirmation" id="password-register-confirm" type="password"
+                                        class="form-control">
                                     @error('password_confirmation')
                                         <p class="m-0 alert alert-danger shadow-sm">{{ $message }}</p>
                                     @enderror
@@ -121,7 +122,7 @@
                                 </div><!-- End .form-footer -->
                             </form>
                         </div>
-                            {{-- <div class="form-choice">
+                        {{-- <div class="form-choice">
                                 <p class="text-center">or sign in with</p>
                                 <div class="row">
                                     <div class="col-sm-6">

@@ -22,7 +22,7 @@ class UserController extends Controller
     public function showCorrectHomepage()
     {
         if (auth()->check()) {
-            return view('homepage-feed', ['posts' => auth()->user()->feedPosts()->latest()->paginate(4)]);
+            return view('homepage-feed', ['posts' => auth()->user()->feedPosts()->latest()->paginate(4), 'users' => auth()->user()->get()]);
         } else {
             $postCount = Cache::remember('postCount', 20, function () {
                 // sleep(5);
@@ -102,7 +102,7 @@ class UserController extends Controller
     public function storeAvatar(Request $request)
     {
         $request->validate([
-            'avatar' => 'required|image|max:3000'
+            'avatar' => 'required|image|max:4000'
         ]);
 
         $user = auth()->user();

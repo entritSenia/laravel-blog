@@ -10,7 +10,7 @@
     <title> @isset($doctitle)
             {{ $doctitle }} | My Blog App
         @else
-        My Blog App
+            My Blog App
         @endisset
     </title>
     <meta name="keywords" content="HTML5 Template">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
-    <link rel="manifest" href="images/icons/site.html">
+    {{-- <link rel="manifest" href="images/icons/site.html"> --}}
     <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#666666">
     <link rel="shortcut icon" href="/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Molla">
@@ -53,13 +53,28 @@
     <div class="page-wrapper">
         <div class="border-top">
             <div class="container-fluid d-flex">
-                <div class="col-6 text-left">
+                @auth
+                    <div class="col-1" id="mobile-menu-new">
+                        <input type="checkbox" id="active">
+                        <label for="active" class="menu-btn"><span></span></label>
+                        <label for="active" class="close"></label>
+                        <div class="wrapper">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/create-post">Create A post</a></li>
+                                <li><a href="/profile/{{ auth()->user()->username }}">Profile</a></li>
+                                {{-- <li><a href="#">Feedback</a></li> --}}
+                            </ul>
+                        </div>
+                    </div>
+                @endauth
+                <div class="col-5 text-left" id="top-bar">
                     <ul class="menu justify-content-start p-1 pt-1 pr-5">
-                        <li class="pr-4 text-white"><span style="font-size: 16px">tel: 999999</span></li>
+                        <li class="pr-4 text-white"><span style="font-size: 16px">tel: 999</span></li>
                         <li class="text-white"><span style="font-size: 16px">entritsenia@gmail.com</span></li>
                     </ul>
                 </div>
-                <div class="col-6">
+                <div class="col-11 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 co col-2">
                     <ul class="menu justify-content-end p-1 pr-5">
                         @auth
                             <li><a href="/profile/{{ auth()->user()->username }}" class="mr-4 p-0"><img
@@ -103,39 +118,36 @@
             <div class="sticky-header pt-3">
                 <div class="container">
                     <div class="header">
-                        <button class="mobile-menu-toggler">
-                            <span class="sr-only">Toggle mobile menu</span>
-                            <i class="icon-bars"></i>
-                        </button>
-
                         <nav class="main-nav">
-                            <ul class="menu sf-arrows justify-content-center">
-                                <li>
-                                    <a href="/" class="sf-with-ul down-arrow-none">Home</a>
-                                </li>
-                                <li>
-                                    <a href="/create-post" class="sf-with-ul down-arrow-none">Create A post</a>
-                                </li>
-                                <li>
-                                    <a href="/profile/{{ auth()->user()->username }}" class="sf-with-ul down-arrow-none">Profile</a>
-                                </li>
-                                <li>
-                                    {{-- <a href="/profile/{{ auth()->user()->username }}"
+                            @auth
+                                <ul class="menu sf-arrows justify-content-center">
+                                    <li>
+                                        <a href="/" class="sf-with-ul down-arrow-none">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/create-post" class="sf-with-ul down-arrow-none">Create A post</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/profile/{{ auth()->user()->username }}"
+                                            class="sf-with-ul down-arrow-none">Profile</a>
+                                    </li>
+                                    <li>
+                                        {{-- <a href="/profile/{{ auth()->user()->username }}"
                                         class="sf-with-ul down-arrow-none">My Profile</a> --}}
-                                </li>
-                                <li>
-                                    <a href="#" class="header-search-icon" title="Search"
-                                        data-toggle="tooltip" data-placement="bottom"><i class="icon-search"
-                                            style="color:#333;font-size:22px;font-weight:700"></i></a>
-
-                                </li><!-- End .header-search -->
-                                <li>
-
+                                    </li>
+                                    <li>
+                                        <a href="#" class="header-search-icon" title="Search"
+                                            data-toggle="tooltip" data-placement="bottom"><i class="icon-search"
+                                                style="color:#333;font-size:22px;font-weight:700"></i></a>
+                                    </li><!-- End .header-search -->
+                                    {{-- <li>
                                     <span class="mr-2 header-chat-icon" title="Chat" data-toggle="tooltip"
                                         data-placement="bottom"><i class="fas fa-comment"
                                             style="color:#333;font-size:20px;font-weight:700"></i></span>
-                                </li>
-                            </ul><!-- End .menu -->
+                                </li> --}}
+                                </ul><!-- End .menu -->
+                            @endauth
                         </nav><!-- End .main-nav -->
                     </div><!-- End .header-left -->
                 </div><!-- End .container -->
@@ -173,10 +185,10 @@
                                 <p class="mb-1">Entrit Senia</p>
                                 <p class="mb-2">entritsenia@gmail.com</p>
                                 <div class="social-icons justify-content-center">
-                                    <a href="https://www.linkedin.com/in/entrit-senia/" class="social-icon" target="_blank" title="Linked-in"><i
-                                            class="icon-linkedin"></i></a>
-                                    <a href="https://www.instagram.com/entritsenia/" class="social-icon" target="_blank" title="Instagram"><i
-                                            class="icon-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/entrit-senia/" class="social-icon"
+                                        target="_blank" title="Linked-in"><i class="icon-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/entritsenia/" class="social-icon"
+                                        target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
                                 </div><!-- End .soial-icons -->
                             </div><!-- End .widget about-widget -->
                         </div><!-- End .col-sm-6 col-lg-3 -->
@@ -184,9 +196,9 @@
                     </div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .footer-middle -->
-            <div class="text-center col-12 border-top p-3">
-                <p class="m-0">Copyright &copy; {{ date('Y') }} <a href="/"
-                        class="text-muted">Entrit Senia</a>. All
+            <div class="text-center col-12 border-top p-2">
+                <p class="m-0">Copyright &copy; {{ date('Y') }} <a href="/" class="text-muted">Entrit
+                        Senia</a>. All
                     rights reserved.
                 </p>
             </div>
@@ -384,9 +396,9 @@
     @vite(['resources/js/main.js'])
     <!-- Main JS File -->
 
-    <script>
+    {{-- <script>
         $('[data-toggle="tooltip"]').tooltip()
-    </script>
+    </script> --}}
 </body>
 
 

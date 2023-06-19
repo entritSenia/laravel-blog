@@ -8,17 +8,17 @@ jQuery(document).ready(function($) {
 		$(this).addClass('active').siblings().removeClass('active');
 	});
 
-	$('.molla-lz').lazyload({
-		effect: 'fadeIn',
-		effect_speed: 400,
-		appearEffect: '',
-		appear: function(elements_left, settings) {
-			
-		},
-		load: function(elements_left, settings) {
-			$(this).removeClass('molla-lz').css('padding-top', '');
-		}
-	});
+	// $('.molla-lz').lazyload({
+	// 	effect: 'fadeIn',
+	// 	effect_speed: 400,
+	// 	appearEffect: '',
+	// 	appear: function(elements_left, settings) {
+
+	// 	},
+	// 	load: function(elements_left, settings) {
+	// 		$(this).removeClass('molla-lz').css('padding-top', '');
+	// 	}
+	// });
 
 	// Mobile Menu Toggle - Show & Hide
 	$('.mobile-menu-toggler').on('click', function (e) {
@@ -54,13 +54,13 @@ jQuery(document).ready(function($) {
 	});
 });
 
-jQuery(window).on('load', function() {
-	jQuery('.demos').isotope({
-		filter: '.homepages',
-		initLayout: true,
-		itemSelector: '.iso-item',
-		layoutMode: 'masonry'
-	}).on('layoutComplete', function(e) {
-		jQuery(window).trigger('scroll');
-	});
-});
+// jQuery(window).on('load', function() {
+// 	jQuery('.demos').isotope({
+// 		filter: '.homepages',
+// 		initLayout: true,
+// 		itemSelector: '.iso-item',
+// 		layoutMode: 'masonry'
+// 	}).on('layoutComplete', function(e) {
+// 		jQuery(window).trigger('scroll');
+// 	});
+// });

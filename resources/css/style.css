@@ -16347,7 +16347,7 @@ button:focus {
 /*# sourceMappingURL=style.css.map */
 
 .border-top {
-    height: 40px;
+    max-height: 80px;
     background-color: #e6ccb2;
 }
 
