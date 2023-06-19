@@ -61,9 +61,11 @@
                         <div class="wrapper">
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/create-post">Create A post</a></li>
+                                <li><a href="/create-post">Create a post</a></li>
                                 <li><a href="/profile/{{ auth()->user()->username }}">Profile</a></li>
-                                {{-- <li><a href="#">Feedback</a></li> --}}
+                                <li><a href="#" class="header-search-icon" title="Search" data-toggle="tooltip"
+                                        data-placement="bottom"><i class="icon-search"
+                                            style="color:#333;font-size:32px;font-weight:700;position:relative"></i></a></li>
                             </ul>
                         </div>
                     </div>
