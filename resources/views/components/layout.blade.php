@@ -63,9 +63,10 @@
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/create-post">Create a post</a></li>
                                 <li><a href="/profile/{{ auth()->user()->username }}">Profile</a></li>
-                                <li><a href="#" class="header-search-icon" title="Search" data-toggle="tooltip"
+                                <li><a class="header-small-search-icon" title="Search" data-toggle="tooltip"
                                         data-placement="bottom"><i class="icon-search"
-                                            style="color:#333;font-size:32px;font-weight:700;position:relative"></i></a></li>
+                                            style="color:#333;font-size:32px;font-weight:700;position:relative"></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -139,8 +140,8 @@
                                         class="sf-with-ul down-arrow-none">My Profile</a> --}}
                                     </li>
                                     <li>
-                                        <a href="#" class="header-search-icon" title="Search"
-                                            data-toggle="tooltip" data-placement="bottom"><i class="icon-search"
+                                        <a class="header-search-icon" title="Search" data-toggle="tooltip"
+                                            data-placement="bottom"><i class="icon-search"
                                                 style="color:#333;font-size:22px;font-weight:700"></i></a>
                                     </li><!-- End .header-search -->
                                     {{-- <li>

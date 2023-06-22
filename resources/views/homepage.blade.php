@@ -6,11 +6,11 @@
                 <div class="form-tab">
                     <ul class="nav nav-pills nav-fill" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab"
+                            <a class="nav-link" id="signin-tab-2" data-toggle="tab"  role="tab"
                                 aria-controls="signin-2" aria-selected="false">Log In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" id="register-tab-2" data-toggle="tab" href="#register-2"
+                            <a class="nav-link active" id="register-tab-2" data-toggle="tab"
                                 role="tab" aria-controls="register-2" aria-selected="true">Register</a>
                         </li>
                     </ul>
@@ -74,8 +74,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="username-register">Your username *</label>
-                                    <input class="form-control" name="username"
-                                        id="username-register" type="text" autocomplete="off" />
+                                    <input class="form-control" name="username" id="username-register" type="text"
+                                        autocomplete="off" />
                                     @error('username')
                                         <p class="m-0 alert alert-danger shadow-sm">{{ $message }}</p>
                                     @enderror
@@ -83,8 +83,8 @@
 
                                 <div class="form-group">
                                     <label for="email-register">Your email address *</label>
-                                    <input type="text" name="email"
-                                        class="form-control" id="email-register" autocomplete="off" />
+                                    <input type="text" name="email" class="form-control" id="email-register"
+                                        autocomplete="off" />
                                     @error('email')
                                         <p class="m-0 alert alert-danger shadow-sm">{{ $message }}</p>
                                     @enderror

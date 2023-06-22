@@ -18,6 +18,11 @@ body,
     top: 3px;
 }
 
+.header-small-search-icon {
+    position: relative;
+    top: 3px;
+}
+
 .header-chat-icon {
     cursor: pointer;
     position: relative;

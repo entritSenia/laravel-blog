@@ -40,18 +40,6 @@
                                         @endforeach
                                     </ul><!-- End .posts-list -->
                                 </div><!-- End .widget -->
-                                {{-- <div class="widget widget-search">
-                                    <h3 class="widget-title">Search</h3><!-- End .widget-title -->
-
-                                    <form action="#">
-                                        <label for="ws" class="sr-only">Search in blog</label>
-                                        <input type="search" class="form-control" name="ws" id="ws"
-                                            placeholder="Search in blog" />
-                                        <button type="submit" class="btn "><a class="icon-search header-search-icon"></a><span
-                                                class="sr-only">Search</span></button>
-                                    </form>
-                                </div><!-- End .widget --> --}}
-
                                 {{-- <div class="widget widget-cats">
                                     <h3 class="widget-title">Following</h3><!-- End .widget-title -->
 

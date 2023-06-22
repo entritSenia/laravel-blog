@@ -4,6 +4,9 @@ export default class Search {
     // 1. Select DOM elements, and keep track of any useful data
     constructor() {
         this.injectHTML();
+        this.headerSearchIconSmall = document.querySelector(
+            ".header-small-search-icon"
+        );
         this.headerSearchIcon = document.querySelector(".header-search-icon");
         this.overlay = document.querySelector(".search-overlay");
         this.closeIcon = document.querySelector(".close-live-search");
@@ -20,6 +23,10 @@ export default class Search {
         this.inputField.addEventListener("keyup", () => this.keyPressHandler());
         this.closeIcon.addEventListener("click", () => this.closeOverlay());
         this.headerSearchIcon.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.openOverlay();
+        });
+        this.headerSearchIconSmall.addEventListener("click", (e) => {
             e.preventDefault();
             this.openOverlay();
         });
