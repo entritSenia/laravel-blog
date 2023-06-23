@@ -34,10 +34,10 @@ Route::post('/manage-avatar', [UserController::class, "storeAvatar"]);
 // Blog post related routes
 Route::get('/create-post', [PostController::class, "showCreateForm"])->middleware('mustBeLoggedIn');
 Route::post('/create-post', [PostController::class, "storeNewPost"])->middleware('mustBeLoggedIn');
-Route::get('/post/{post}', [PostController::class, "viewSinglePost"]);
-Route::delete('/post/{post}', [PostController::class, "delete"])->middleware('can:delete,post');
-Route::get('/post/{post}/edit', [PostController::class, "showEditForm"])->middleware('can:update,post');
-Route::put('/post/{post}', [PostController::class, "actuallyUpdate"])->middleware('can:update,post');
+Route::get('/post/{post}', [PostController::class, "viewSinglePost"])->middleware('mustBeLoggedIn');
+Route::delete('/post/{post}', [PostController::class, "delete"])->middleware('can:delete,post', 'mustBeLoggedIn');
+Route::get('/post/{post}/edit', [PostController::class, "showEditForm"])->middleware('can:update,post', 'mustBeLoggedIn');
+Route::put('/post/{post}', [PostController::class, "actuallyUpdate"])->middleware('can:update,post', 'mustBeLoggedIn');
 Route::get('search/{term}', [PostController::class, "search"]);
 
 // Follow related routes
@@ -45,7 +45,7 @@ Route::post('/create-follow/{user:username}', [FollowController::class, "createF
 Route::post('/remove-follow/{user:username}', [FollowController::class, "removeFollow"])->middleware('mustBeLoggedIn');
 
 // Profile related routes
-Route::get('/profile/{user:username}', [UserController::class, "profile"]);
+Route::get('/profile/{user:username}', [UserController::class, "profile"])->middleware('mustBeLoggedIn');
 // Route::get('/profile/{user:username}/followers', [UserController::class, "profileFollowers"]);
 // Route::get('/profile/{user:username}/following', [UserController::class, "profileFollowing"]);
 
