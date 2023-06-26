@@ -69,15 +69,19 @@ jQuery(document).ready(function ($) {
 
     $("#signin-tab-2").on("click", function (e) {
         $(this).attr("aria-selected", "true");
+        $("#register-tab-2").removeClass("active");
+        $(this).addClass("active");
         $("#register-2").removeClass("show active");
         $("#signin-2").addClass("show active");
-        console.log("sign in");
+        // console.log("sign in");
     });
     $("#register-tab-2").on("click", function (e) {
         $(this).attr("aria-selected", "true");
+        $("#signin-tab-2").removeClass("active");
+        $(this).addClass("active");
         $("#signin-2").removeClass("show active");
         $("#register-2").addClass("show active");
-        console.log("register");
+        // console.log("register");
     });
 });
 
