@@ -23,13 +23,9 @@ class UserController extends Controller
     {
         if (auth()->check()) {
             return view('homepage-feed', ['posts' => auth()->user()->feedPosts()->latest()->paginate(4), 'users' => auth()->user()->get()]);
-        } else {
-            $postCount = Cache::remember('postCount', 20, function () {
-                // sleep(5);
-                return Post::count();
-            });
-            return view('homepage', ['postCount' => $postCount]);
         }
+            return view('homepage');
+
     }
 
     public function login(Request $request)
